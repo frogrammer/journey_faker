@@ -1,2 +1,5 @@
+aiohttp
 faker
+geopandas
+haversine
 python-dotenv
