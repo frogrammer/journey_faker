@@ -4,10 +4,9 @@
 # pylint: disable=line-too-long
 import json
 from faker import Faker
-from helpers import config, spatial
+from .helpers import config, spatial
 
-OUTPUT_FILE = './out/people.json'
-
+OUTPUT_FILE = config.CONFIG['PEOPLE_FILE']
 num_people = config.CONFIG['NUM_PEOPLE']
 faker = Faker()
 

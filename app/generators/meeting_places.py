@@ -3,9 +3,9 @@
 # pylint: disable=missing-function-docstring
 # pylint: disable=line-too-long
 import json
-from helpers import config, spatial
+from ..helpers import config, spatial
 
-OUTPUT_FILE = './out/meeting_places.json'
+OUTPUT_FILE = config.CONFIG['MEETING_PLACES_FILE']
 
 num_poi = config.CONFIG['NUM_MEETING_POIS']
 

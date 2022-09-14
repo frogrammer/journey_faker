@@ -4,10 +4,10 @@
 # pylint: disable=line-too-long
 import random
 import json
-from helpers import config, spatial
+from app.helpers import config, spatial
 
-OUTPUT_FILE = './out/people_journeys.json'
-PEOPLE_FILE = './out/people.json'
+OUTPUT_FILE = config.CONFIG['PEOPLE_JOURNEYS_FILE']
+PEOPLE_FILE = config.CONFIG['PEOPLE_FILE']
 num_journeys = config.CONFIG['NUM_JOURNEYS']
 people_journeys = []
 with open(PEOPLE_FILE, 'r', encoding='UTF-8') as pf:
