@@ -5,12 +5,44 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Current File",
+            "name": "waypoints",
             "type": "python",
             "request": "launch",
             "console": "integratedTerminal",
             "justMyCode": true,
-            "module": "app.generators.journey_routes"
+            "module": "app.generators.waypoints"
+        },
+        {
+            "name": "people",
+            "type": "python",
+            "request": "launch",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "module": "app.generators.people"
+        },
+        {
+            "name": "groups",
+            "type": "python",
+            "request": "launch",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "module": "app.generators.groups"
+        },
+        {
+            "name": "routes",
+            "type": "python",
+            "request": "launch",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "module": "app.generators.routes"
+        },
+        {
+            "name": "telemetry",
+            "type": "python",
+            "request": "launch",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "module": "app.generators.telemetry"
         }
     ]
 }

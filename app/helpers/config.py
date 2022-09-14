@@ -13,12 +13,15 @@ DEFAULT_CONFIG = {
     'RADIUS_KM': 5,
     'NUM_JOURNEYS': 10,
     'NUM_PEOPLE': 10,
-    'NUM_MEETING_POIS': 1,
+    'NUM_GROUPS': 1,
     'AZMAPS_KEY': '',
     'PEOPLE_FILE': './out/people.json',
-    'PEOPLE_JOURNEYS_FILE': './out/people_journeys.json',
-    'MEETING_PLACES_FILE': './out/meeting_places.json',
-    'JOURNEY_ROUTES_FILE': './out/journey_routes.json'
+    'GROUPS_FILE': './out/groups.json',
+    'WAYPOINTS_FILE': './out/waypoints.json',
+    'TELEMETRY_FILE': './out/telemetry.csv',
+    'ROUTES_FILE': './out/routes.json',
+    'GROUP_SIZE_MIN': 3,
+    'GROUP_SIZE_MAX': 6,
 }
 
 CONFIG = {key: type(DEFAULT_CONFIG[key])(os.environ[key]) if key in os.environ else DEFAULT_CONFIG[key] for key in DEFAULT_CONFIG}
