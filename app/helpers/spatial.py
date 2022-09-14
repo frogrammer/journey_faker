@@ -46,11 +46,15 @@ def simulate_group_travel(group: dict):
                 p['travel_plan'] = p['travel_plan'] + leg_points
                 travel_time = travel_time + leg_time
                 if group['id'] != -1 and i == p['meeting_waypoint']:
+                    travel_time = math.ceil(travel_time + time_per_point + 10)
                     p['time_at_meeting'] = travel_time
-
+                    p['meeting'] = [group['meeting_place']['latlng'][0], group['meeting_place']['latlng'][1], math.ceil(travel_time)]
+                    leg_points = leg_points + [p['meeting']]
+                p['travel_plan'] = p['travel_plan'] + leg_points
+                travel_time = travel_time + 120
     if group['id'] != -1:
         max_meeting_time = max([p['time_at_meeting'] for p in group['members']])
-
+        group['meeting_time'] = max_meeting_time
         for p in group['members']:
             time_offset = max_meeting_time - p['time_at_meeting']
             p['travel_plan'] = [[t[0], t[1], t[2] + time_offset] for t in p['travel_plan']]

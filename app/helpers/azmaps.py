@@ -7,7 +7,7 @@ from . import config
 
 AZURE_MAPS_KEY = config.CONFIG['AZMAPS_KEY']
 POI_SEARCH_STRING = 'https://atlas.microsoft.com/search/poi/json?api-version=1.0&subscription-key={0}&lat={1}&lon={2}&radius={3}&query=cafe'
-ROUTE_SEARCH_STRING = 'https://atlas.microsoft.com/route/directions/json?subscription-key={0}&api-version=1.0&query={1}'
+ROUTE_SEARCH_STRING = 'https://atlas.microsoft.com/route/directions/json?subscription-key={0}&api-version=1.0&query={1}&travelMode=pedestrian'
 POI_SEARCH_RADIUS_M = 1000
 
 async def find_poi(lat: float, lng: float) -> list:
