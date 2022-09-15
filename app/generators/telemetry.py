@@ -14,7 +14,7 @@ telemetry = []
 with open(ROUTES_FILE, 'r', encoding='UTF-8') as jf:
     groups = json.loads(jf.read())
 
-telemetry = [{'id': p['id'], 'name': p['name'], 'lat': t[0], 'lng': t[1], 'time': t[2]} for g in groups for p in g['members'] for t in p['travel_plan']]
+telemetry = [{'id': p['id'], 'name': p['name'], 'lat': t[0], 'lng': t[1], 'time': t[2], 'colour': p['colour'] if 'colour' in p else 'blue' if g['id'] == 0 else 'gray'} for g in groups for p in g['members'] for t in p['travel_plan']]
 telemetry_df = pd.DataFrame(telemetry)
 telemetry_df = telemetry_df.sort_values('time')
 telemetry_df.to_csv(OUTPUT_FILE, header=True, index=False)

@@ -72,10 +72,10 @@ def calculate_distance_from_person(person: dict, lat: float, lng: float, time: i
 def simulate_signal_strength(distance_m: float):
     max_signal = -30
     min_signal = -100
-    max_distance = 1000
+    max_distance = 500
     if distance_m == 0:
         return max_signal
     elif distance_m >= max_distance:
         return None
     else:
-        return min_signal + (distance_m / max_distance) * (max_signal - min_signal)
+        return min_signal + (1 - (distance_m / max_distance)**2) * (max_signal - min_signal)

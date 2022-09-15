@@ -21,5 +21,5 @@ signals_df['distance'] = signals_df.apply(lambda row: spatial.calculate_distance
 signals_df['signal_strength'] = signals_df['distance'].apply(spatial.simulate_signal_strength)
 signals_df['source'] = signals_df['devices'].apply(random.choice)
 signals_df['wifi_ssid'] = signals_df['known_wifi'].apply(random.choice)
-signals_df = signals_df.drop(columns=['known_wifi', 'devices', 'lat', 'lng', 'distance']).sort_values('time')
+signals_df = signals_df.drop(columns=['known_wifi', 'devices', 'lat', 'lng']).sort_values('time')
 signals_df[signals_df['signal_strength'].notna()].to_csv(OUTPUT_FILE, header=True, index=False)
