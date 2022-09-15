@@ -2,6 +2,7 @@
 # pylint: disable=missing-class-docstring
 # pylint: disable=missing-function-docstring
 # pylint: disable=line-too-long
+# pylint: disable=bare-except
 import aiohttp
 from . import config
 
@@ -23,7 +24,7 @@ async def find_routes(waypoints: list[list[float]]) -> list:
     route_search = ROUTE_SEARCH_STRING.format(AZURE_MAPS_KEY, waypoint_str)
     resp = await http_session.get(route_search)
     data = await resp.json()
-    try:
+    if resp.ok:
         return data['routes']
-    except:
+    else:
         return [-1]

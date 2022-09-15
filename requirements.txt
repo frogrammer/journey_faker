@@ -1,5 +1,7 @@
 aiohttp
+contextily
 faker
 geopandas
 haversine
+matplotlib
 python-dotenv
