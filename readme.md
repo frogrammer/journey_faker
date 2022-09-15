@@ -18,7 +18,7 @@
 
 ## Workflow
 
-1. Configure parameters
+1. Configure parameters (.env)
 2. Write "stories"
 3. Generate people
 4. Generate waypoints
