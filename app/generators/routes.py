@@ -19,6 +19,8 @@ for g in groups:
     for i, p in enumerate(g['members']):
         p['route'] = routes[i]
     group_travel_plans = spatial.simulate_group_travel(g)
+    for p in g['members']:
+        del p['route']
     travel_plans = travel_plans + [group_travel_plans]
 
 with open(OUTPUT_FILE, 'w', encoding='UTF-8') as rf:

@@ -5,20 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "waypoints",
-            "type": "python",
-            "request": "launch",
-            "console": "integratedTerminal",
-            "justMyCode": true,
-            "module": "app.generators.waypoints"
-        },
-        {
             "name": "people",
             "type": "python",
             "request": "launch",
             "console": "integratedTerminal",
             "justMyCode": true,
             "module": "app.generators.people"
+        },
+        {
+            "name": "waypoints",
+            "type": "python",
+            "request": "launch",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "module": "app.generators.waypoints"
         },
         {
             "name": "groups",
@@ -43,6 +43,22 @@
             "console": "integratedTerminal",
             "justMyCode": true,
             "module": "app.generators.telemetry"
+        },
+        {
+            "name": "story telemetry",
+            "type": "python",
+            "request": "launch",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "module": "app.generators.telemetry_story"
+        },
+        {
+            "name": "signals",
+            "type": "python",
+            "request": "launch",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "module": "app.generators.signals"
         }
     ]
 }

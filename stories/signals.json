@@ -1,0 +1,5 @@
+{
+    "person_id": 2,
+    "signals_from": [0, 1],
+    "signal_types": ["wifi", "bluetooth"]
+}

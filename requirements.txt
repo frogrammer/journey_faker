@@ -1,6 +1,7 @@
 aiohttp
 contextily
 faker
+faker-wifi-essid
 geopandas
 haversine
 matplotlib

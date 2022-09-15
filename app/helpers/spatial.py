@@ -4,6 +4,7 @@
 # pylint: disable=line-too-long
 import asyncio
 import math
+from operator import itemgetter
 import random
 import haversine
 from . import azmaps, config
@@ -60,3 +61,21 @@ def simulate_group_travel(group: dict):
             p['travel_plan'] = [[t[0], t[1], t[2] + time_offset] for t in p['travel_plan']]
 
     return group
+
+def calculate_distance(src_latlng: list[float], dst_latlng: list[float]):
+    return haversine.haversine(tuple(src_latlng), tuple(dst_latlng), haversine.Unit.METERS)
+
+def calculate_distance_from_person(person: dict, lat: float, lng: float, time: int):
+    nearby_xyt = sorted([t for t in person['travel_plan'] if t[2] <= time], key=itemgetter(2))[-1]
+    return calculate_distance([lat, lng], nearby_xyt[0:2])
+
+def simulate_signal_strength(distance_m: float):
+    max_signal = -30
+    min_signal = -100
+    max_distance = 1000
+    if distance_m == 0:
+        return max_signal
+    elif distance_m >= max_distance:
+        return None
+    else:
+        return min_signal + (distance_m / max_distance) * (max_signal - min_signal)

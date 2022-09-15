@@ -20,8 +20,15 @@ DEFAULT_CONFIG = {
     'WAYPOINTS_FILE': './out/waypoints.json',
     'TELEMETRY_FILE': './out/telemetry.csv',
     'ROUTES_FILE': './out/routes.json',
+    'SIGNALS_FILE': './out/signals.csv',
+    'SIGNALS_STORY_FILE': './stories/signals.json',
+    'PEOPLE_STORY_FILE': './stories/people.json',
     'GROUP_SIZE_MIN': 3,
     'GROUP_SIZE_MAX': 6,
+    'DEVICES_MIN':1,
+    'DEVICES_MAX':6,
+    'KNOWN_WIFI_MIN':3,
+    'KNOWN_WIFI_MAX':20
 }
 
 CONFIG = {key: type(DEFAULT_CONFIG[key])(os.environ[key]) if key in os.environ else DEFAULT_CONFIG[key] for key in DEFAULT_CONFIG}

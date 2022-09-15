@@ -13,12 +13,12 @@ people_journeys = []
 with open(PEOPLE_FILE, 'r', encoding='UTF-8') as pf:
     people_journeys = json.loads(pf.read())
 
-for pj in people_journeys:
-    pj['waypoints'] = [pj['favourite_place']]
+for pj in [p for p in people_journeys if not 'story' in p]:
+    pj['waypoints'] = [pj['start_place']]
 
 random_latlngs = spatial.get_random_latlng_batch(num_journeys)
 for ll in random_latlngs:
-    pj = random.choice(people_journeys)
+    pj = random.choice([p for p in people_journeys if not 'story' in p])
     pj['waypoints'].append(ll)
 
 people_journeys_json = json.dumps(people_journeys)
